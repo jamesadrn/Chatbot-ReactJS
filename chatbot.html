@@ -17,20 +17,24 @@
         border: none;
         border-radius: 10px;
         font-size: 15px;
-        /* hand pointer icon */
-        cursor: pointer;
       }
 
       .chat-input {
         padding: 12px 15px;
         font-size: 15px;
-        border-radius: 10px;
+        border-radius: 20px;
         /* untuk ngatur garis outline pakai border-width */
-        border-width: 1px;
-
+        border-width: 0px;
         flex-grow: 1;
 
       }
+
+      .chat-input:focus {
+        outline: none;   /* hilangin outline default */
+        box-shadow: none; /* kalau ada efek shadow dari browser */
+        border-color: transparent; /* opsional, kalau masih ada border */
+      }
+
 
       .chat-input-container{
         display: flex;
@@ -89,6 +93,65 @@
         scrollbar-width: none;
         /* auto scroll using react hook (useState) is a hook*/
       }
+    
+
+      .theme-button{
+        background-color: #212121;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        padding: 15px 20px;
+        width: 150px;
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .theme-container{
+        display: flex;
+        justify-content: center;
+      }
+
+      body.light{
+        background-color: white;
+        color: #212121;
+      }
+
+      body.light .chat-input{
+        background-color: #212121;
+        color: white;
+      }
+
+      body.dark{
+        background-color: #212121;
+        color: white;
+      }
+
+      body.dark .theme-button{
+        background-color: white;
+        color: #212121;
+      }
+
+      body.dark .chat-input{
+        background-color: #303030;
+        color: white;
+      }
+
+      body.dark .chat-message-text{
+        background-color: #303030;
+      }
+
+      .send-button:not(:disabled) {
+        cursor: pointer;
+      }
+
+
+      .send-button:disabled {
+      background-color: #d7d7d7;
+      opacity: 0.8;
+      }     
+
 
     </style>
   </head>
@@ -147,16 +210,25 @@
         return (
           <div className="chat-input-container">
             <input 
-            placeholder="Send a message to Chatbot" 
-            size="30" 
-            onChange={saveInputText}
-            value={inputText}
-            className="chat-input"
+              placeholder="Send a message to Chatbot" 
+              size="30" 
+              onChange={saveInputText}
+              value={inputText}
+              className="chat-input"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && inputText.trim() !== "") {
+                  sendMessage();
+                }
+              }}
             />
             <button
               onClick={sendMessage}
               className="send-button"
-            >Send</button>
+              disabled={inputText.trim() === ""}
+              title={inputText.trim() === '' ? 'Message is empty' : ''}
+            >
+              Send
+            </button>
           </div>
         );
       }
@@ -216,32 +288,20 @@
 
       function App() {
 
-        const [chatMessages, setChatMessages] = React.useState([
+        const [chatMessages, setChatMessages] = React.useState([]);
+        const [darkMode, setDarkMode] = React.useState(false);
 
-          {
-            message: "hello chatbot",
-            sender: "user",
-            id: "id1",
-          },
-          {
-            message: "Hello! How can I help you?",
-            sender: "robot",
-            id: "id2",
-          },
-          {
-            message: "can you get me todays date?",
-            sender: "user",
-            id: "id3",
-          },
-          {
-            message: "Today is September 27",
-            sender: "robot",
-            id: "id4",
-          },
-        ]);
+        React.useEffect(() => {
+          document.body.className = darkMode ? "dark" : "light";
+        }, [darkMode]);
 
         return (
           <div className="app-container">
+            <div className="theme-container">
+            <button className="theme-button" onClick={() => setDarkMode(!darkMode)}>
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
+            </div>
             <ChatMessages 
               chatMessages={chatMessages}
             />
