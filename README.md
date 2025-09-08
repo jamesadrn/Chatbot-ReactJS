@@ -16,10 +16,11 @@ This project started from a [SuperSimpleDev ReactJS tutorial](https://www.youtub
 
 ## 📸 Screenshots
 ## Light Theme
-<img width="650" height="1275" alt="image" src="https://github.com/user-attachments/assets/8394bd92-cbaa-44ec-ba40-3fc2ce6caba7" />
+<img width="685" height="1266" alt="image" src="https://github.com/user-attachments/assets/8d3d5d20-b6be-4107-a08b-000feec31f2c" />
 
 ## Dark Theme
-<img width="666" height="1278" alt="image" src="https://github.com/user-attachments/assets/c783a91d-ecf5-4794-95f0-3999a4d110f3" />
+<img width="728" height="1279" alt="image" src="https://github.com/user-attachments/assets/60f24541-5be8-46e1-9901-617e12811995" />
+
 
 
 ## Code Improvement
