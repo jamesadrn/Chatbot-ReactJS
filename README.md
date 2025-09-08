@@ -15,11 +15,12 @@ This project started from a [SuperSimpleDev ReactJS tutorial](https://www.youtub
 ---
 
 ## 📸 Screenshots
-LightMode
-<img width="1486" height="1311" alt="image" src="https://github.com/user-attachments/assets/d585f807-793e-4f57-9a88-4ae7e06ab4ae" />
-DarkMode
-<img width="1481" height="1305" alt="image" src="https://github.com/user-attachments/assets/b0fb85fd-8ef5-4c3f-8c06-c22826cb3709" />
+## Light Theme
+<img width="650" height="1275" alt="image" src="https://github.com/user-attachments/assets/8394bd92-cbaa-44ec-ba40-3fc2ce6caba7" />
+
+## Dark Theme
+<img width="666" height="1278" alt="image" src="https://github.com/user-attachments/assets/c783a91d-ecf5-4794-95f0-3999a4d110f3" />
 
 
 ## Code Improvement
-1. **Dark/Light Mode toggle** (using state).
+1. **Dark/Light Theme toggle** (using state).
