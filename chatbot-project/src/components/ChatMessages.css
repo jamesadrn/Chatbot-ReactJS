@@ -1,0 +1,9 @@
+.chat-messages-container {
+  flex-grow: 1;
+  margin-top: 20px;
+  /* cara scrollable */
+  overflow: scroll;
+  /* cara hide scrollbar */
+  scrollbar-width: none;
+  /* auto scroll using react hook (useState) is a hook*/
+}

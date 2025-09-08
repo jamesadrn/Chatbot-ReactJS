@@ -1,0 +1,34 @@
+body {
+  font-family: Arial;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body.light{
+  background-color: white;
+  color: #212121;
+}
+
+body.light .chat-input{
+  background-color: #212121;
+  color: white;
+}
+
+body.dark{
+  background-color: #212121;
+  color: white;
+}
+
+body.dark .theme-button{
+  background-color: white;
+  color: #212121;
+}
+
+body.dark .chat-input{
+  background-color: #303030;
+  color: white;
+}
+
+body.dark .chat-message-text{
+  background-color: #303030;
+}

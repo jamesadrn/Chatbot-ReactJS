@@ -1,0 +1,15 @@
+.app-container {
+  /* lebar containernya */
+  max-width: 600px;
+  /* center the app */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* viewport height (100vh = 100% dari tinggi browser appnya angkanya adalah sebuah persentase) */
+  height: 100vh;
+
+  /* flex box maksa elemen untuk horizontal jadi default flex-direction: row*/
+  display: flex;
+
+  flex-direction: column;
+} 

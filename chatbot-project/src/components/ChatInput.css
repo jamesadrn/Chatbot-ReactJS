@@ -1,0 +1,48 @@
+.chat-input {
+  padding: 14px 20px;
+  font-size: 15px;
+  border-radius: 20px;
+  /* untuk ngatur garis outline pakai border-width */
+  border-width: 0px;
+  flex-grow: 1;
+
+}
+
+.chat-input:focus {
+  outline: none; 
+  box-shadow: none; 
+  border-color: transparent;
+}
+
+
+.chat-input-container{
+  display: flex;
+  margin-bottom: 60px;
+}
+
+/* Send Button */
+.send-button, .clear-button {
+  background-color: rgb(39, 95, 50);
+  color: white;
+  padding: 12px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.send-button:not(:disabled) {
+  cursor: pointer;
+}
+
+
+.send-button:disabled {
+background-color: #d7d7d7;
+opacity: 0.8;
+}   
+
+/* Clear button */
+.clear-button {
+  background-color: rgb(4, 3, 3);
+  cursor: pointer;
+}
